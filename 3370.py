@@ -74,6 +74,9 @@ decodeList = []
 for i in messageList:
     decodeString = ""
     for j in range(int(len(i)/2)):
-        decodeString = decodeString + conversion[i[2*j] + i[(2*j)+1]]
+        if conversion[i[2*j] + i[(2*j)+1]] == "whitespace":
+            decodeString = decodeString + " "
+        else:
+            decodeString = decodeString + conversion[i[2*j] + i[(2*j)+1]]
     decodeList.append(decodeString)
 print(decodeList)
